@@ -74,9 +74,40 @@ namespace ConsoleApp8
             }
 
             // printing out visited.
+            Console.WriteLine("Depth First");
             foreach (string n in visited)
             {
                 Console.WriteLine(n);
+            }
+
+
+
+            Stack<string> st = new Stack<string>();
+            Queue<string> q = new Queue<string>();
+
+            string v = "A";
+            string next = "";
+            st.Push(v);
+            while(st.Count!=0)
+            {
+                v = st.Pop();
+                if (!q.Contains(v))
+                {
+                    q.Enqueue(v);
+                    foreach(string x in adj[v])
+                    {
+                        if (!q.Contains(x))
+                        {
+                            st.Push(x);
+                        }
+                    }
+                }
+
+            }
+            Console.WriteLine("Depth First");
+            foreach(string x in q)
+            {
+                Console.WriteLine(x);
             }
 
         }
