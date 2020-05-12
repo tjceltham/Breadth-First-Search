@@ -86,7 +86,7 @@ namespace ConsoleApp8
             Queue<string> q = new Queue<string>();
 
             string v = "A";
-            string next = "";
+            
             st.Push(v);
             while(st.Count!=0)
             {
